@@ -1,9 +1,10 @@
-from abc import ABCMeta, abstractmethod
 import point_n_rect as pnr
 
-class Gameobject(metaclass=ABCMeta):
-    def __init__(self, *args):
+class Gameobject(Rectangle):
+    def __init__(self, width, height):
         # args should add in (x,y) tuple
-        self.position = pnr.Point(args[0],args[1])
+        self.position = pnr.Point()
+        self.hitbox = pnr.Rectangle(self.position, width, height)
     
-    @abstractmethod
+    def iscollide(self, other):
+        self.contains()
