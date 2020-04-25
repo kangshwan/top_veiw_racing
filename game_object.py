@@ -6,5 +6,5 @@ class Gameobject(Rectangle):
         self.position = pnr.Point()
         self.hitbox = pnr.Rectangle(self.position, width, height)
     
-    def iscollide(self, other):
-        self.contains()
+    def intersects(self, other):
+        #is this object is collide by other game object?
