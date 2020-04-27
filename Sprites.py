@@ -24,9 +24,12 @@ class Player(pg.sprite.Sprite):
         self.vel = vec(0,0)
         self.acc = vec(0,0)
         self.acc_max = vec()
+
     def load_images(self):
         self.image = pg.Surface((32, 32))
         self.image.fill(BLACK)
+        self.arm_image = pg.Surface((32,64))
+        self.arm_image.fill(LIGHTBLUE)
         pass
 
     def update(self):
