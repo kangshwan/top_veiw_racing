@@ -5,6 +5,8 @@ from setting import *
 from sprites import *
 import time 
 from time import sleep
+from moviepy.editor import VideoFileClip
+
 
 vec = pg.math.Vector2
 
@@ -50,8 +52,10 @@ class Game:
         self.bullets = pg.sprite.Group()
         self.obstarcle = pg.sprite.Group()
         self.walls = pg.sprite.Group()#just for test
-
         self.player = Player(self)
+        self.leg = Leg(self)
+        
+     
         #self.player make Player Object
         self.start_tick = pg.time.get_ticks()
         """
@@ -94,11 +98,21 @@ class Game:
                     self.running = False
                     self.start = False
                 self.start = False
+            if event.type == pg.MOUSEBUTTONDOWN:
+                pass
+    def draw_grid(self):
+        for x in range(0, WIDTH, TILESIZE):
+            pg.draw.line(self.screen, LIGHTGREY, (x,0), (x, HEIGHT))
+            for y in range(0, HEIGHT, TILESIZE):
+                pg.draw.line(self.screen, LIGHTGREY, (0,y), (WIDTH,y))
+                
     def draw(self):
         # game loop - draw
-        self.screen.fill(WHITE)
+        self.screen.fill(DARKGREY)
+        self.draw_grid()
         self.all_sprites.draw(self.screen)
         pg.display.update()
+
 
 g = Game()
 while g.start:
