@@ -16,7 +16,7 @@ class Player(pg.sprite.Sprite):
         self.walking = False
         self.current_frame = 0
         self.lase_update = 0
-        self.size = (32,32)
+        self.size = (32,48)
         self.load_images()
         #self.image = self.standing_frames[0]
         self.orig_image = self.image
@@ -28,7 +28,7 @@ class Player(pg.sprite.Sprite):
         self.acc_max = vec()
 
     def load_images(self):
-        self.image = pg.Surface(self.size,pg.SRCALPHA)
+        self.image = pg.Surface(self.size, pg.SRCALPHA)
         self.image.fill(BLACK)
         pass
 
