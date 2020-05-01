@@ -9,7 +9,7 @@ from moviepy.editor import VideoFileClip
 
 
 vec = pg.math.Vector2
-
+#No hello world
 class Game:
     def __init__(self):
         # initialize game window, etc
